@@ -10,12 +10,12 @@ if(!port){
 }
 
 let server = http.createServer(function(request, response){
-    let parseUrl = url.parse(request.url,true)
+    let parsedUrl = url.parse(request.url,true)
     let path = request.url
     let query = ''
     if(path.indexOf('?') >= 0){ query = path.substring(path.indexOf('?'))}
-    let pathNoQuery = parseUrl.pathname
-    let queryObject = parseUrl.query
+    let pathNoQuery = parsedUrl.pathname
+    let queryObject = parsedUrl.query
     let method = request.method
 })
 
