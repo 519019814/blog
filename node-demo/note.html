@@ -3,61 +3,95 @@
   <head>
     <title>方方的个人简历</title>
     <link rel="stylesheet" href="./css/a.css">
-    <style>
+    <style type="text/css">
+      .icon {
+         width: 1em; height: 1em;
+         vertical-align: -0.15em;
+         fill: currentColor;
+         overflow: hidden;
+      }
     </style>
+    <script src="//at.alicdn.com/t/font_2257196_3lr284qc23f.js"></script>
   </head>
   <body>
     <div class="topNavBar clearfix" >
-      <a href="#" class="logo" alt="logo" >
-        <span class="rs">RS</span><span class="card">card</span>
-      </a>
-      <nav>
-        <ul class="clearfix">
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">SKILLS</a></li>
-          <li><a href="#">EXPERIENCE</a></li>
-          <li><a href="#">PRICING</a></li>
-          <li><a href="#">BLOG</a></li>
-          <li><a href="#">CALENDAR</a></li>
-          <li><a href="#">CONTACT</a></li>
-          <li><a href="#">OTHER</a></li>
-          <li><a href="#">ALL DEMOS</a></li>
-        </ul>
-      </nav>
+      <div class="topNavBar-son">
+        <a href="#" class="logo" alt="logo" >
+          <span class="rs">RS</span><span class="card">card</span>
+        </a>
+        <nav>
+          <ul class="clearfix">
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">SKILLS</a></li>
+            <li><a href="#">EXPERIENCE</a></li>
+            <li><a href="#">PRICING</a></li>
+            <li><a href="#">BLOG</a></li>
+            <!-- <li><a href="#">CALENDAR</a></li> -->
+            <!-- <li><a href="#">CONTACT</a></li> -->
+            <li><a href="#">OTHER</a></li>
+            <!-- <li><a href="#">ALL DEMOS</a></li> -->
+          </ul>
+        </nav>
+      </div>
     </div>
-    <div class="banner"></div>
+    <div class="banner">
+      <div class="mask"></div>
+    </div>
     <main>
-      <div class="card">
-        <div class="picture">
-          头像
-        </div>
-        <div class="text">
-          <div class="profile">
-            <span class="welcome">Hello</span>
-            <h1>方应杭</h1>
-            <p>前端开发工程师</p>
-            <hr>
-            <dl>
-              <dt>年龄</dt>
-              <dd>18</dd>
-              <dt>所在城市</dt>
-              <dd>北京</dd>
-              <dt>邮箱</dt>
-              <dd>fangyinghang@foxmail.com</dd>
-              <dt>手机</dt>
-              <dd>13812345678</dd>
-            </dl>
+      <div class="userCard">
+        <div class="pictureAndText clearfix">
+          <div class="picture">
+            头像
           </div>
-          <footer class="media">
-            <a href="#"><img src="#" alt="..."></a>
-            <a href="#"><img src="#" alt="..."></a>
-            <a href="#"><img src="#" alt="..."></a>
-            <a href="#"><img src="#" alt="..."></a>
-            <a href="#"><img src="#" alt="..."></a>
-            <a href="#"><img src="#" alt="..."></a>
-            <a href="#"><img src="#" alt="..."></a>
-          </footer>
+          <div class="text">
+              <span class="welcome">Hello<span></span></span>
+              <h1>方应杭</h1>
+              <p>前端开发工程师</p>
+              <hr>
+              <dl>
+                <dt>年龄</dt>
+                <dd>18</dd>
+                <dt>所在城市</dt>
+                <dd>北京</dd>
+                <dt>邮箱</dt>
+                <dd>fangyinghang@foxmail.com</dd>
+                <dt>手机</dt>
+                <dd>13812345678</dd>
+              </dl>
         </div>
+      </div>
+        <footer class="media">
+          <a href="#">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-weibo"></use>
+            </svg>
+          </a>
+          <a href="#">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-github"></use>
+            </svg>
+          </a>
+          <a href="#">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-weibo1"></use>
+          </svg>
+          </a>
+          <!-- <a href="#">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-tuite"></use>
+          </svg>
+          </a>
+          <a href="#">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-youtube"></use>
+          </svg>
+          </a> -->
+          <!-- <a href="#">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#icon-github1"></use>
+          </svg>
+          </a>
+        </footer> -->
       </div>
 
       <a class="button" href="#">下载 PDF 简历</a>
@@ -68,5 +102,56 @@
       </p>
 
     </main>
+    <section class="skills">
+      <h2>技能</h2>
+      <ol class="clearfix">
+        <li>
+          <h3>HTML5,CSS3</h3>
+          <div class="progressBar">
+            <div class="progress"></div>
+          </div>
+        </li>
+        <li>
+          <h3>JavaScript</h3>
+          <div class="progressBar">
+            <div class="progress"></div>
+          </div>
+        </li>
+        <li>
+          <h3>Vue</h3>
+          <div class="progressBar">
+            <div class="progress"></div>
+          </div>
+        </li>
+        <li>
+          <h3>React</h3>
+          <div class="progressBar">
+            <div class="progress"></div>
+          </div>
+        </li>
+        <li>
+          <h3>HTTP</h3>
+          <div class="progressBar">
+            <div class="progress"></div>
+          </div>
+        </li>
+        <li>
+          <h3>Java</h3>
+          <div class="progressBar">
+            <div class="progress"></div>
+          </div>
+        </li>
+      </ol>
+    </section>
+    <section class="portfolio">
+      <h2>作品集</h2>
+      <nav>
+        <ol>
+          <li>所有</li>
+          <li>框架</li>
+          <li>原生JS</li>
+        </ol>
+      </nav>
+    </section>
   </body>
 </html>
