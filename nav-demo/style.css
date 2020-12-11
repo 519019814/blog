@@ -1,0 +1,64 @@
+*{
+     margin: 0;
+     padding: 0;
+}
+body{
+    background: grey url(lulu.jpg) no-repeat center center;
+    background-size: cover;
+}
+main{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#keyboardAll{
+    width: 700px;
+    margin: 0 auto;
+}
+#keyboardAll > div:nth-child(2){
+    margin-left: -22px;
+}
+#keyboardAll > div:nth-child(3){
+    margin-left: -82px;
+}
+#keyboardAll img{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    bottom: 4px;
+    left: 5px;
+}
+.key{
+    width: 50px;
+    height: 40px;
+    text-align: left;
+    display: inline-block;
+    border: 1px solid #222;
+    border-radius: 6px;
+    margin: 0 0 5px 10px;
+    text-transform:uppercase;
+    position: relative;
+    background:linear-gradient(to bottom, #292929 0%,#111111 100%);
+    color: white;
+    box-shadow: 0 0 0 1px #1a1b1c, 0 0 0 2px #1f2020;
+}
+kbd > span{
+    margin: 3px 0px 0px 5px;
+    display: inline-block;
+    text-align: left;
+    font-size: 16px;
+}
+kbd:hover > button{
+    display: inline-block;
+}
+kbd > button{
+    text-transform: lowercase;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: none;
+    cursor:pointer;
+    font-size: 6px;
+}
