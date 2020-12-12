@@ -25,14 +25,54 @@
         </a>
         <nav>
           <ul class="clearfix">
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">SKILLS</a></li>
-            <li><a href="#">EXPERIENCE</a></li>
-            <li><a href="#">PRICING</a></li>
-            <li><a href="#">BLOG</a></li>
+            <li>
+              <a href="#">ABOUT</a>
+              <ul class="listBar ">
+                <li>列表项2</li>
+                <li>列表项2</li>
+                <li>列表项2</li>
+                <li>列表项2</li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">SKILLS</a>
+              <ul class="listBar ">
+                <li>列表项2</li>
+                <li>列表项2</li>
+                <li>列表项2</li>
+                <li>列表项2</li>
+              </ul>
+            </li>
+            <li><a href="#">EXPERIENCE</a>
+              <ul class="listBar ">
+                <li>列表项2</li>
+                <li>列表项2</li>
+                <li>列表项2</li>
+                <li>列表项2</li>
+              </ul></li>
+            <li><a href="#">PRICING</a>
+              <ul class="listBar ">
+                <li>列表项2</li>
+                <li>列表项2</li>
+                <li>列表项2</li>
+                <li>列表项2</li>
+              </ul></li>
+            <li><a href="#">BLOG</a>
+              <ul class="listBar ">
+                <li>列表项2</li>
+                <li>列表项2</li>
+                <li>列表项2</li>
+                <li>列表项2</li>
+              </ul></li>
             <!-- <li><a href="#">CALENDAR</a></li> -->
             <!-- <li><a href="#">CONTACT</a></li> -->
-            <li><a href="#">OTHER</a></li>
+            <li><a href="#">OTHER</a>
+              <ul class="listBar ">
+                <li>列表项2</li>
+                <li>列表项2</li>
+                <li>列表项2</li>
+                <li>列表项2</li>
+              </ul></li>
             <!-- <li><a href="#">ALL DEMOS</a></li> -->
           </ul>
         </nav>
@@ -45,7 +85,7 @@
       <div class="userCard">
         <div class="pictureAndText clearfix">
           <div class="picture">
-            头像
+            头像 ::after 
           </div>
           <div class="text">
               <span class="welcome">Hello<span></span></span>
@@ -159,9 +199,26 @@
     </section>
   </body>
   <script>
-      siteWelcome.classList.remove('active')
+    siteWelcome.classList.remove('active')
     // topBar.
-    window.onscroll = function(){
+    // let bottomLi = document.querySelectorAll(".topNavBar nav > ul >li")
+    // let bottomBar = document.querySelectorAll(".bottomBar")
+    // for(let i = 0;i<bottomLi.length;i++){
+    //   bottomLi[i].onmouseenter = function(){
+    //   bottomBar[i].style.width = "100%"
+    // }
+    // }
+      let bottomLi = document.querySelectorAll(".topNavBar nav > ul >li")
+      let listBar = document.querySelectorAll(".listBar")
+      for (let i = 0; i < bottomLi.length; i++) {
+        bottomLi[i].onmouseenter = function () {
+          listBar[i].classList.add("active")
+        }
+        bottomLi[i].onmouseleave = function(){
+          listBar[i].classList.remove("active")
+        }
+      }
+      window.onscroll = function () {
       console.log(scrollY)
       if(window.scrollY > 0){
         topBar.classList.add("sticky")
