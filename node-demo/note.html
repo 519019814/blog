@@ -13,6 +13,7 @@
       }
     </style>
     <script src="//at.alicdn.com/t/font_2257196_3lr284qc23f.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
   </head>
   <body>
     <div id="siteWelcome" class="site-welcome active">
@@ -26,7 +27,7 @@
         <nav>
           <ul class="clearfix">
             <li>
-              <a href="#">ABOUT</a>
+              <a href="#siteAbout">ABOUT</a>
               <ul class="listBar ">
                 <li>列表项2</li>
                 <li>列表项2</li>
@@ -35,7 +36,7 @@
               </ul>
             </li>
             <li>
-              <a href="#">SKILLS</a>
+              <a href="#siteSkills">SKILLS</a>
               <ul class="listBar ">
                 <li>列表项2</li>
                 <li>列表项2</li>
@@ -43,7 +44,7 @@
                 <li>列表项2</li>
               </ul>
             </li>
-            <li><a href="#">EXPERIENCE</a>
+            <li><a href="#siteWorks">EXPERIENCE</a>
               <ul class="listBar ">
                 <li>列表项2</li>
                 <li>列表项2</li>
@@ -82,7 +83,7 @@
       <div class="mask"></div>
     </div>
     <main>
-      <div class="userCard">
+      <div id="siteAbout" class="userCard">
         <div class="pictureAndText clearfix">
           <div class="picture">
             头像 ::after 
@@ -146,7 +147,7 @@
       </p>
 
     </main>
-    <section class="skills">
+    <section  id="siteSkills" class="skills">
       <h2>技能</h2>
       <ol class="clearfix">
         <li>
@@ -187,7 +188,7 @@
         </li>
       </ol>
     </section>
-    <section class="portfolio">
+    <section id="siteWorks" class="portfolio">
       <h2>作品集</h2>
       <nav>
         <ol>
@@ -208,28 +209,59 @@
     //   bottomBar[i].style.width = "100%"
     // }
     // }
-      let bottomLi = document.querySelectorAll(".topNavBar nav > ul >li")
-      let listBar = document.querySelectorAll(".listBar")
-      for (let i = 0; i < bottomLi.length; i++) {
-        bottomLi[i].onmouseenter = function () {
-          listBar[i].classList.add("active")
+    let aTags = document.querySelectorAll(".topNavBar nav > ul >li >a")
+    for(let i = 0;i<aTags.length;i++){
+      aTags[i].onclick = function(x){
+        x.preventDefault()
+        let href = this.getAttribute('href')
+        let element = document.querySelector(href)
+        let top = element.offsetTop
+
+        let currentTop = window.scrollY
+        let targetTop = top - 80
+        let s = targetTop - currentTop
+        let t = Math.abs((s/100)*300)
+        if(t>500) t=500
+        function animate(time) {
+          requestAnimationFrame(animate)
+          TWEEN.update(time)
         }
-        bottomLi[i].onmouseleave = function(){
-          listBar[i].classList.remove("active")
-        }
+        requestAnimationFrame(animate)
+
+        const coords = { y: currentTop } 
+        const tween = new TWEEN.Tween(coords) 
+          .to({  y: targetTop}, t) 
+          .easing(TWEEN.Easing.Quadratic.Out) 
+          .onUpdate(() => {
+           window.scrollTo(0,coords.y)
+          })
+          .start()
       }
-      window.onscroll = function () {
+    }
+
+
+    let bottomLi = document.querySelectorAll(".topNavBar nav > ul >li")
+    let listBar = document.querySelectorAll(".listBar")
+    for (let i = 0; i < bottomLi.length; i++) {
+      bottomLi[i].onmouseenter = function () {
+        listBar[i].classList.add("active")
+      }
+      bottomLi[i].onmouseleave = function () {
+        listBar[i].classList.remove("active")
+      }
+    }
+    window.onscroll = function () {
       console.log(scrollY)
-      if(window.scrollY > 0){
+      if (window.scrollY > 0) {
         topBar.classList.add("sticky")
-      }else{
+      } else {
         topBar.classList.remove("sticky")
       }
-      if(window.scrollY > 700){
-        let barList = ["progressSide","progressSide1","progressSide2",
-        "progressSide3","progressSide4","progressSide5"]
+      if (window.scrollY > 700) {
+        let barList = ["progressSide", "progressSide1", "progressSide2",
+          "progressSide3", "progressSide4", "progressSide5"]
         let bar = document.getElementsByClassName('progress')
-        for(let i = 0;i<bar.length;i++){
+        for (let i = 0; i < bar.length; i++) {
           bar[i].classList.add(barList[i])
         }
       }
