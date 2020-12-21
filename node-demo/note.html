@@ -266,5 +266,35 @@
         }
       }
     }
+
+
+
+    window.Node2 = function (node) {
+        return {
+          addClass: function (node) {
+            for (let key in node) {
+              if (node[key]) {
+                node.classList.add(key)
+              } else {
+                node.classList.remove(key)
+              }
+            }
+          },
+          searchChild: function (node) {
+            let allChildren = node.parentNode.children
+            let arr = { length: 0 }
+            for (let i = 0; i < allChildren.length; i++) {
+              if (allChildren[i] !== node) {
+                arr[arr.length] = allChildren[i]
+              }
+
+              arr.length++
+            }
+            return arr
+          }
+        }
+      }   
+
+    
   </script>
 </html>
