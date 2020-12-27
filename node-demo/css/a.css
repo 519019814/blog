@@ -262,3 +262,67 @@ section.skills ol li{
     box-sizing: border-box;
     padding-right: 10px;
 }
+.bannerp{
+    width: 500px;
+    height: 300px;
+    margin: 100px auto;
+    overflow: hidden;
+    position: relative;
+}
+.bannerp .circles{
+    width: 160px;
+    height: 20px;
+    position: absolute;
+    bottom:10px;
+    left: 50%;
+    margin-left: -75px;
+    z-index: 9999;
+}
+.bannerp .circles li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background-color: #49da8f;
+    margin-right: 10px;
+    border-radius: 10px;
+    transition: all .3s;
+    cursor: pointer;
+}
+.bannerp .circles li:last-child{
+    margin-right: 0;
+}
+.bannerp .circles li.current{
+    width: 40px;
+    background-color: #20bd9a;
+}
+
+.bannerp .carousel_list {
+    width: 600%;
+    /* 清除浮动 */
+    overflow: hidden;
+    /* translateX中的百分数表示相对于它本身的宽度的多少倍 */
+    /* transform: translateX(-33.333%); */
+    transition: transform .5s ease 0s;
+}
+.bannerp .carousel_list li{
+    float: left;
+}
+.bannerp .carousel_list li img {
+    width: 500px;
+    height: 300px;
+    /* 白边的处理 */
+    vertical-align: middle;
+}
+.bannerp .leftbtn{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: white;
+}
+.bannerp .rightbtn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: white;
+
+}
